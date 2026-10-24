@@ -16,6 +16,7 @@ setup(
         "einops",
         "termcolor",
         "setproctitle",
+        "tqdm",
         "torch==2.7.0",
         "tensordict==0.7.2",
         "torchrl==0.7.2",

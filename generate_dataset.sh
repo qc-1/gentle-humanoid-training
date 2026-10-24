@@ -1,7 +1,12 @@
-mkdir -p dataset
-# Define dataset root
-DATASET_ROOT=/home/axell/Desktop/dataset_new/retarget_g1 # change to your dataset root path
+#!/usr/bin/env bash
 
-python scripts/data_process/generate_dataset.py --dataset-root $DATASET_ROOT/AMASS --allowlist scripts/data_process/allowlist_amass.json --mem-path dataset/amass
-python scripts/data_process/generate_dataset.py --dataset-root $DATASET_ROOT/InterX --allowlist scripts/data_process/allowlist_interx.json --mem-path dataset/interx
-python scripts/data_process/generate_dataset.py --dataset-root $DATASET_ROOT/LAFAN --allowlist scripts/data_process/allowlist_lafan.json --mem-path dataset/lafan
+set -euo pipefail
+
+DATASET_ROOT="${DATASET_ROOT:-/home/qc/data/retarget_g1}"
+
+mkdir -p dataset
+
+python scripts/data_process/generate_dataset.py \
+    --dataset-root "${DATASET_ROOT}/LAFAN" \
+    --allowlist scripts/data_process/allowlist_lafan.json \
+    --mem-path dataset/lafan

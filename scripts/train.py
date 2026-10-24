@@ -73,7 +73,9 @@ def main(cfg: DictConfig):
     if need_logging:
         run = wandb.init(
             job_type=cfg.wandb.job_type,
+            entity=cfg.wandb.entity,
             project=cfg.wandb.project,
+            dir=os.getcwd(),
             mode=cfg.wandb.mode,
             tags=cfg.wandb.tags,
             id=cfg.wandb.id,
@@ -86,6 +88,7 @@ def main(cfg: DictConfig):
         run.name = f"{run_idx}-{default_run_name}"
         setproctitle(run.name)
 
+        os.makedirs(run.dir, exist_ok=True)
         cfg_save_path = os.path.join(run.dir, "cfg.yaml")
         OmegaConf.save(cfg, cfg_save_path)
         run.save(cfg_save_path, policy="now")
