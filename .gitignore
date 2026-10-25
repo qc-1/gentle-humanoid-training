@@ -202,4 +202,4 @@ sim2sim/real_g1/data
 sim2sim/real_g1/plot
 sim2sim/real_g1/*.npy
 motion.npy
-dataset
+# dataset
