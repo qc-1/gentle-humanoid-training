@@ -56,6 +56,5 @@ run_pipeline() {
   echo ">>> ${cmd[*]}"; "${cmd[@]}"
 }
 
-run_pipeline "G1/G1_gentle" "gentle" "$RUN_SUFFIX"
 run_pipeline "G1/G1_no_force" "noforce" "$RUN_SUFFIX"
 run_pipeline "G1/G1_extreme_force" "extremeforce" "$RUN_SUFFIX"

@@ -1,0 +1,13 @@
+{
+  "params": {
+    "target_fps": 50,
+    "pad_before": 0,
+    "pad_after": 0,
+    "segment_len": 1000
+  },
+  "segments": {
+    "default_stand.npz": [
+      [0, 1000]
+    ]
+  }
+}
